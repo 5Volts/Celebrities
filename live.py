@@ -16,9 +16,9 @@ while(True):
 		cv2.rectangle(frame, (x-3, y-3), (x+w+3, y+h+3), (0, 255, 0), 2)
 		crop_img = frame[y:y + h, x:x + w]
 	cv2.imshow('Frame', frame)
-	if cv2.waitKey(1) & 0xFF == ord('q'):
+	if cv2.waitKey(1) >0:
+		image.append(crop_img)
 		break
-	image.append(crop_img)
 cap.release()
 cv2.destroyAllWindows()
 cv2.imshow("Face",image[0])
